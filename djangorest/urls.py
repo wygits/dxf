@@ -19,14 +19,13 @@ from django.conf.urls import url, include
 
 from django.urls import include, path
 from rest_framework import routers
-from users import views
 
-router = routers.DefaultRouter()
-router.register(r'student', views.StudentViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'student', views.StudentViewSet)
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls')),
-    path('', include(router.urls)),
+    # url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^users/', include('users.urls')),
 ]
